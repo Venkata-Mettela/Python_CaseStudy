@@ -1,5 +1,7 @@
+from dao import dbconnection
 class Task:
-    def __init__(self, tname, tdesc, tstatus, tpriority, tnotes, tbm, townid, tcrid, crton, modon):
+    def __init__(self, tid,tname, tdesc, tstatus, tpriority, tnotes, tbm, townid, tcrid, crton, modon):
+        self.tid = tid
         self.tname = tname
         self.tdesc = tdesc
         self.tstatus = tstatus
@@ -10,3 +12,5 @@ class Task:
         self.tcrid = tcrid
         self.crton = crton
         self.modon = modon
+         dbconnection.insert(tid, tname, tdesc, tstatus, tpriority, tnotes, tbm, townid, tcrid,
+                         crton, modon)
